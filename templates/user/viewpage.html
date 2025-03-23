@@ -1,0 +1,45 @@
+{% extends "user/index.html" %}
+{% block body %}
+
+<body><form name="form8" method="post" action="/user_reg_post">
+    {% csrf_token %}
+<table class="table table-bordered">
+  <tr>
+    <td>NAME</td>
+    <td>
+      <input type="text" name="textfield" id="textfield" value="{{ data.name }}" readonly>
+    </td>
+  </tr>
+  <tr>
+    <td>EMAIL</td>
+    <td>
+      <input type="text" name="textfield2" id="textfield2" value="{{ data.email }}" readonly>
+    </td>
+  </tr>
+  <tr>
+    <td>PHONE</td>
+    <td>
+      <input type="text" name="textfield3" id="textfield3" value="{{ data.phone }}"readonly >
+    </td>
+  </tr>
+  <tr>
+    <td>HOUSE</td>
+    <td>
+      <input type="text" name="textfield4" id="textfield4" value="{{ data.house }}" readonly>
+    </td>
+  </tr>
+  <tr>
+    <td>POST</td>
+    <td>
+      <input type="text" name="textfield5" id="textfield5" value="{{ data.post }}" readonly>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+    <a href="">Edit</a>
+   </td>
+  </tr>
+</table>
+</form>
+</body>
+{% endblock %}

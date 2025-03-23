@@ -1,0 +1,29 @@
+{% extends "user/index.html" %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="/user_attend_exam_post" enctype="multipart/form-data">
+    {% csrf_token %}
+<table class="table table-bordered">
+    <tr>
+        <td colspan="2" align="center">
+            <h2>Score : {{ score }}</h2>
+            <img src="/static/signs/{{ qn }}.jpg" height="200" width="200" />
+        </td>
+    </tr>
+  <tr>
+    <td>ALPHABET</td>
+    <td>
+      <input type="text" name="textfield" id="textfield" class="form-control" required />
+      <input type="hidden" name="correct" value="{{ qn }}" />
+      <input type="hidden" name="cnt" value="{{ cnt }}" />
+   </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <input type="submit" name="button" id="button" value="NEXT"  class="btn btn-info"/>
+</td>
+  </tr>
+</table>
+     </form>
+</body>
+{% endblock %}

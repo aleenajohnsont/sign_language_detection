@@ -1,0 +1,26 @@
+{% extends "user/index.html" %}
+{% block body %}
+<body>
+<center>
+    <img src="{{ path }}" height="400" width="600" />
+</center>
+<table CLASS="table table-striped" border="1">
+  <tr>
+    <td>SLNO</td>
+    <td>DATE</td>
+    <td>ATTENDED</td>
+    <td>CORRECT</td>
+    <td>MARK</td>
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td>{{  forloop.counter  }}</td>
+    <td>{{ i.date }}</td>
+    <td>{{ i.attended }}</td>
+    <td>{{ i.correct }}</td>
+    <td>{{ i.mark }}</td>
+  </tr>
+    {% endfor %}
+</table>
+</body>
+{% endblock %}
